@@ -17,7 +17,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:id="@+id/ivShoe"
-            android:src="@drawable/img_giay"
+            android:src="@drawable/img_ao"
             app:shapeAppearanceOverlay="@style/cusImage" />
 
         <LinearLayout
@@ -146,7 +146,7 @@
                 android:textSize="12sp"
                 android:text="Delete"
                 android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
         </LinearLayout>
 

@@ -1,4 +1,4 @@
-package congntph34559.fpoly.ph34559_ass_application;
+package namdq.fpoly.asm_ph35172;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -14,49 +14,38 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.ColorSpace;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.style.UpdateAppearance;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.imageview.ShapeableImageView;
-
-import java.io.File;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import congntph34559.fpoly.ph34559_ass_application.API.APIService;
-import congntph34559.fpoly.ph34559_ass_application.DTO.ShoeDTO;
-import congntph34559.fpoly.ph34559_ass_application.Utils.RealPathUtil;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
+import namdp.fpoly.asm_ph35172.R;
+import namdq.fpoly.asm_ph35172.API.APIService;
+import namdq.fpoly.asm_ph35172.DTO.ShoeDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.POST;
 
 public class NewCreateAndAddActivity extends AppCompatActivity {
     private static final int MY_RES_CODE = 10;
     TextView tvTitle;
-    ImageView ivBack,ivImageShoe;
+    ImageView ivBack, ivImageShoe;
     Spinner spSize;
     ArrayAdapter adapterSp;
     List<String> listSize = new ArrayList<String>();
@@ -64,36 +53,29 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
     EditText edName, edPrice, edBrand;
     LinearLayout btnChooseImage;
 
-    Uri mUri;//DEMO
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult o) {
 
-    ActivityResultLauncher<Intent> activityResultLauncher =
-            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult o) {
+            Log.e("zzzzz", "onActivityResult: ");
 
-                    Log.e("zzzzz", "onActivityResult: ");
-
-                    if (o.getResultCode() == Activity.RESULT_OK) {
-                        Intent data = o.getData();
-                        if (data == null) {
-                            return;
-                        }
-                        Uri uri = data.getData();
-                        mUri = uri;
-                        try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uri);
-                            ivImageShoe.setImageBitmap(bitmap);
-
-                        }catch (IOException e){
-                            e.printStackTrace();
-                        }
-                    }
-                    
+            if (o.getResultCode() == Activity.RESULT_OK) {
+                Intent data = o.getData();
+                if (data == null) {
+                    return;
                 }
-            });
+                Uri uri = data.getData();
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                    ivImageShoe.setImageBitmap(bitmap);
 
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
-
+        }
+    });
 
 
     @Override
@@ -128,12 +110,11 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
                     UpdateShoe();
                 } else {
                     CreateShoe();
-//                    CreateShoe2();//DEMO
 
                 }
-
             }
         });
+
 
         btnChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +124,8 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
         });
 
 
-    }
+}
+
 
     @SuppressLint("ObsoleteSdkInt")
     private void ChooseImage() {
@@ -155,9 +137,9 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
 
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             openGallery();
-        }else {
-            String [] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
-            requestPermissions(permission,MY_RES_CODE);
+        } else {
+            String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
+            requestPermissions(permission, MY_RES_CODE);
         }
 
 
@@ -166,7 +148,7 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode  == MY_RES_CODE) {
+        if (requestCode == MY_RES_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openGallery();
             }
@@ -179,7 +161,7 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        activityResultLauncher.launch(Intent.createChooser(intent,"Select Picture"));
+        activityResultLauncher.launch(Intent.createChooser(intent, "Select Picture"));
 
 
     }
@@ -193,10 +175,7 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
 
         if (CheckCreateShoe()) {
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(APIService.DOMAIN)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            Retrofit retrofit = new Retrofit.Builder().baseUrl(APIService.DOMAIN).addConverterFactory(GsonConverterFactory.create()).build();
 
             APIService apiService = retrofit.create(APIService.class);
 
@@ -225,64 +204,6 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
 
     }
 
-    //DEMO
-    private void CreateShoe2() {
-
-        String name = edName.getText().toString();
-        String brand = edBrand.getText().toString();
-        String price = edPrice.getText().toString();
-        String size = (String) spSize.getSelectedItem();
-
-        if (mUri != null) {
-
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(APIService.DOMAIN)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-            APIService apiService = retrofit.create(APIService.class);
-//            RequestBody requestBodyName = RequestBody.create(MediaType.parse("multipart/form-data"),name);
-//            RequestBody requestBodyBrand = RequestBody.create(MediaType.parse("multipart/form-data"),brand);
-//            RequestBody requestBodyPrice = RequestBody.create(MediaType.parse("multipart/form-data"),price);
-//            RequestBody requestBodySize = RequestBody.create(MediaType.parse("multipart/form-data"),size);
-
-            String strRealPath = RealPathUtil.getRealPath(this,mUri);
-            Log.e("zzzzzzz", "CreateShoe2: "+strRealPath);
-            File file = new File(strRealPath);
-
-            RequestBody requestBodyUri = RequestBody.create(MediaType.parse("image/*"),file);
-            MultipartBody.Part mPart = MultipartBody.Part.createFormData("uri",file.getName(),requestBodyUri);
-
-            Call<ShoeDTO> call = apiService.createShoe2(
-                   mPart
-            );
-
-
-            call.enqueue(new Callback<ShoeDTO>() {
-                @Override
-                public void onResponse(Call<ShoeDTO> call, Response<ShoeDTO> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(NewCreateAndAddActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(NewCreateAndAddActivity.this, MainActivity.class));
-                        finish();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ShoeDTO> call, Throwable t) {
-                    Log.e("zzzzz", "onFailure: " + t.getMessage());
-                }
-            });
-
-
-
-
-        }
-
-
-
-    }
-
     private boolean CheckCreateShoe() {
 
         return true;
@@ -298,10 +219,7 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
 
         if (CheckCreateShoe()) {
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(APIService.DOMAIN)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            Retrofit retrofit = new Retrofit.Builder().baseUrl(APIService.DOMAIN).addConverterFactory(GsonConverterFactory.create()).build();
 
             APIService apiService = retrofit.create(APIService.class);
 
@@ -380,9 +298,10 @@ public class NewCreateAndAddActivity extends AppCompatActivity {
         listSize.add("XL");
         listSize.add("XXL");
 
-        adapterSp =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listSize);
+        adapterSp = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listSize);
         spSize.setAdapter(adapterSp);
 
     }
 }
+
+

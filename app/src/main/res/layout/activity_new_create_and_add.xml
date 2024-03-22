@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NewCreateAndAddActivity">
+    tools:context="namdq.fpoly.asm_ph35172.NewCreateAndAddActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#66D7EE"
+        android:background="#3F51B5"
         android:orientation="horizontal">
 
         <ImageView
@@ -33,7 +33,7 @@
             android:fontFamily="serif"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Create shoe"
+            android:text="Shop áo"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:hint="Enter name shoe"
                 android:padding="17dp"
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/custom_input"
+                    android:background="@drawable/cus_bg_camera"
                     android:fontFamily="serif"
                     android:hint="Enter name brand"
                     android:padding="17dp"
@@ -130,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/custom_input"
+                    android:background="@drawable/cus_bg_camera"
                     android:fontFamily="serif"
                     android:hint="Enter name price"
                     android:padding="17dp"
@@ -159,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:background="@drawable/custom_input" />
+                android:background="@drawable/cus_bg_camera" />
 
         </LinearLayout>
 

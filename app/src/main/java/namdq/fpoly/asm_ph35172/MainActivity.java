@@ -1,4 +1,4 @@
-package congntph34559.fpoly.ph34559_ass_application;
+package namdq.fpoly.asm_ph35172;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,16 +10,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import congntph34559.fpoly.ph34559_ass_application.API.APIService;
-import congntph34559.fpoly.ph34559_ass_application.Adapter.AdapterShoe;
-import congntph34559.fpoly.ph34559_ass_application.DTO.ShoeDTO;
+import namdp.fpoly.asm_ph35172.R;
+import namdq.fpoly.asm_ph35172.API.APIService;
+import namdq.fpoly.asm_ph35172.Adapter.AdapterShoe;
+import namdq.fpoly.asm_ph35172.DTO.ShoeDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

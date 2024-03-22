@@ -17,22 +17,22 @@
         android:theme="@style/Theme.PH34559_Ass_Application"
         tools:targetApi="31">
         <activity
-            android:name=".NewCreateAndAddActivity"
+            android:name="namdq.fpoly.asm_ph35172.NewCreateAndAddActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name="namdq.fpoly.asm_ph35172.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="namdq.fpoly.asm_ph35172.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="namdq.fpoly.asm_ph35172.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="namdq.fpoly.asm_ph35172.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name="namdq.fpoly.asm_ph35172.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="namdq.fpoly.asm_ph35172.MainActivity" />
     </application>
 
 </manifest>

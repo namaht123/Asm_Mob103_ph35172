@@ -33,19 +33,19 @@
         >
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Hủy"
             android:fontFamily="serif"
-            android:textColor="@color/white"
-            android:background="@drawable/cus_buttom_delete"
+            android:textColor="#545252"
+            android:background="@drawable/custom_btn_huy"
             android:layout_marginEnd="10dp"
             android:textStyle="bold"
             android:id="@+id/btnHuy"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Xác nhận"
             android:fontFamily="serif"

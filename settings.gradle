@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PH34559_Ass_Application"
+rootProject.name = "Asm_ph35172_mod103"
 include ':app'

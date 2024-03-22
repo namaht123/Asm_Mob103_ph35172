@@ -1,4 +1,4 @@
-package congntph34559.fpoly.ph34559_ass_application.DTO;
+package namdq.fpoly.asm_ph35172.DTO;
 
 public class ShoeDTO {
 

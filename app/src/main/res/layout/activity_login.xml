@@ -7,14 +7,14 @@
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context="namdq.fpoly.asm_ph35172.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:fontFamily="serif"
-        android:text="Welcome Back 👋"
+        android:text="Welcome Back"
         android:textColor="@color/black"
         android:textSize="27sp"
         android:textStyle="bold" />
@@ -52,7 +52,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:id="@+id/edEmailLogin"
                 android:hint="Enter your email"
@@ -87,7 +87,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
@@ -105,7 +105,7 @@
         android:gravity="end"
         android:id="@+id/tvForget"
         android:text="Forget password"
-        android:textColor="#9CE5F4" />
+        android:textColor="#111515" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="serif"
             android:text="Register"
-            android:textColor="#9CE5F4"
+            android:textColor="#0E1112"
             android:id="@+id/tvRegister"
             android:textStyle="bold" />
     </LinearLayout>

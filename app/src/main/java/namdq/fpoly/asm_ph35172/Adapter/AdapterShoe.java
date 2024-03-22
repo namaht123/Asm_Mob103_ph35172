@@ -1,7 +1,6 @@
-package congntph34559.fpoly.ph34559_ass_application.Adapter;
+package namdq.fpoly.asm_ph35172.Adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,11 +24,11 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
 
-import congntph34559.fpoly.ph34559_ass_application.API.APIService;
-import congntph34559.fpoly.ph34559_ass_application.DTO.ShoeDTO;
-import congntph34559.fpoly.ph34559_ass_application.MainActivity;
-import congntph34559.fpoly.ph34559_ass_application.NewCreateAndAddActivity;
-import congntph34559.fpoly.ph34559_ass_application.R;
+import namdq.fpoly.asm_ph35172.API.APIService;
+import namdq.fpoly.asm_ph35172.DTO.ShoeDTO;
+import namdq.fpoly.asm_ph35172.MainActivity;
+import namdq.fpoly.asm_ph35172.NewCreateAndAddActivity;
+import namdq.fpoly.asm_ph35172.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

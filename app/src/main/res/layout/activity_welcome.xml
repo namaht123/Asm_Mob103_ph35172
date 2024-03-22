@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".WelcomeActivity">
+    tools:context="namdq.fpoly.asm_ph35172.WelcomeActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:elevation="10dp"
-        android:src="@drawable/logo2" />
+        android:src="@drawable/logo_ao" />
 
 </LinearLayout>

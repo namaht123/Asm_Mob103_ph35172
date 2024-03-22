@@ -1,4 +1,4 @@
-package congntph34559.fpoly.ph34559_ass_application;
+package namdq.fpoly.asm_ph35172;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("congntph34559.fpoly.ph34559_ass_application", appContext.getPackageName());
+        assertEquals("namdp.fpoly.asm_ph35172", appContext.getPackageName());
     }
 }

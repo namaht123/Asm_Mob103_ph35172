@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context="namdq.fpoly.asm_ph35172.RegisterActivity">
 
     <ImageView
         android:id="@+id/ivBack"
@@ -62,7 +62,7 @@
                 android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:hint="Enter your email"
                 android:padding="19dp"
@@ -97,7 +97,7 @@
                 android:id="@+id/edPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
@@ -132,7 +132,7 @@
                 android:id="@+id/edRePasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
+                android:background="@drawable/cus_bg_camera"
                 android:fontFamily="serif"
                 android:hint="Enter your re-password"
                 android:inputType="textPassword"

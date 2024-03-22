@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'congntph34559.fpoly.ph34559_ass_application'
+    namespace 'namdp.fpoly.asm_ph35172'
     compileSdk 34
 
     defaultConfig {
-        applicationId "congntph34559.fpoly.ph34559_ass_application"
+        applicationId "namdp.fpoly.asm_ph35172"
         minSdk 24
         targetSdk 34
         versionCode 1
