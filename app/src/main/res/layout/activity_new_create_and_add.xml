@@ -159,11 +159,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:background="@drawable/custom_input"
-                android:hint="Enter name size"
-                android:textSize="15sp" />
+                android:background="@drawable/custom_input" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnChooseImage"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/cus_bg_camera"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/camera" />
+
+
+        </LinearLayout>
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImageShoe"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
+            app:shapeAppearanceOverlay="@style/rdView" />
 
 
     </LinearLayout>
@@ -173,7 +200,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/cus_buttom"
         android:fontFamily="serif"
         android:text="Create"

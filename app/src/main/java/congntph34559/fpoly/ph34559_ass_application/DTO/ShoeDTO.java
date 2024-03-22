@@ -7,6 +7,7 @@ public class ShoeDTO {
     private long price;
     private String size;
     private String url;
+    private  String _id;
 
     public ShoeDTO() {
     }
@@ -17,6 +18,14 @@ public class ShoeDTO {
         this.price = price;
         this.size = sizeShoe;
         this.url = url;
+    }
+
+    public String get_Id() {
+        return _id;
+    }
+
+    public void set_Id(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -57,5 +66,17 @@ public class ShoeDTO {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "ShoeDTO{" +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", size='" + size + '\'' +
+                ", url='" + url + '\'' +
+                ", id='" + _id + '\'' +
+                '}';
     }
 }

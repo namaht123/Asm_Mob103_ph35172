@@ -28,9 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<ShoeDTO> list = new ArrayList<>();
-    AdapterShoe adapterShoe;
-    RecyclerView recyclerView;
+    static List<ShoeDTO> list = new ArrayList<>();
+    static AdapterShoe adapterShoe;
+    static RecyclerView recyclerView;
     FloatingActionButton floaAdd;
 
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void CallAPI(Retrofit retrofit) {
+    public static void CallAPI(Retrofit retrofit) {
 
         //Khai báo API Service
         APIService apiService = retrofit.create(APIService.class);
@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<List<ShoeDTO>> call, @NonNull Response<List<ShoeDTO>> response) {
                 if (response.isSuccessful()) {
                     list = response.body();
-                    adapterShoe = new AdapterShoe(getApplicationContext(), list);
+                    adapterShoe = new AdapterShoe(recyclerView.getContext(), list);
                     LinearLayoutManager linearLayoutManager =
-                            new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                            new LinearLayoutManager(recyclerView.getContext(), LinearLayoutManager.VERTICAL, false);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapterShoe);
                     adapterShoe.notifyDataSetChanged();

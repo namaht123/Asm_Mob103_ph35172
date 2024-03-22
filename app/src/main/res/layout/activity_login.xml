@@ -103,6 +103,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="serif"
         android:gravity="end"
+        android:id="@+id/tvForget"
         android:text="Forget password"
         android:textColor="#9CE5F4" />
 
